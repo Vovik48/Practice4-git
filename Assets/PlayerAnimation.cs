@@ -16,25 +16,19 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Keyboard.current != null)
         {
-            if (Keyboard.current.wKey.isPressed)
+            if (Keyboard.current.wKey.wasPressedThisFrame)
             {
                 Debug.Log("StartWalk");
                 npcAnimator.SetTrigger("StartWalk");
             }
+
             if (Keyboard.current.wKey.wasReleasedThisFrame)
             {
                 Debug.Log("EndWalk");
                 npcAnimator.SetTrigger("EndWalk");
             }
-            //if (rb.)
-        }
-
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            //Jump();
         }
     }
 }
